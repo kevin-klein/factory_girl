@@ -12,6 +12,8 @@ module FactoryGirl
   def self.find_definitions
     absolute_definition_file_paths = definition_file_paths.map { |path| File.expand_path(path) }
 
+    puts 'loading stuff'
+
     absolute_definition_file_paths.uniq.each do |path|
       load("#{path}.rb") if File.exist?("#{path}.rb")
 
